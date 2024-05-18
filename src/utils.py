@@ -9,8 +9,9 @@ import sys
 import numpy as np
 import pandas as pd
 import dill
+from sklearn.metrics import r2_score
 
-from src.exception import CustomerException
+from src.exception import CustomException
 
 
 def save_object(filepath,obj):
@@ -23,4 +24,27 @@ def save_object(filepath,obj):
             dill.dump(obj,f)
 
     except Exception as e:
-        raise CustomerException(e,sys)
+        raise CustomException(e,sys)
+    
+
+def evaluate_models(x,y,xt,yt,models):
+    try:
+        report ={}
+
+        for i in range(len(list(models))):
+            model = list(models.values())[i]
+
+            model.fit(x,y)
+            ytrain_pred  = model.predict(x)
+            ytest_pred  = model.predict(xt)
+
+            train_model_score = r2_score(y,ytrain_pred)
+
+            test_model_score = r2_score(yt,ytest_pred)
+
+            report[list(models.keys())[i]] = test_model_score
+
+            return report
+        
+    except Exception as e:
+        raise CustomException(e,sys)

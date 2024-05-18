@@ -19,7 +19,7 @@ def error_msg_detail(error,error_detail:sys):
     error_msg = f"Error occured in python script name {file_name} at line number {line_number} & the error message is [{str(error)}]"
     return error_msg
 
-class CustomerException(Exception):
+class CustomException(Exception):
     def __init__(self,error_message,error_detail:sys):
         super().__init__(error_message)
         self.error_message = error_msg_detail(error_message,error_detail=error_detail)
@@ -32,6 +32,6 @@ if __name__ == "__main__":
         a = 1/0
     except Exception as e:
         logging.info("Divide by Zero Error")
-        raise CustomerException(e,sys)
+        raise CustomException(e,sys)
     
     
