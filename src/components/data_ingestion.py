@@ -1,6 +1,7 @@
 # Ingesting data from different data sources
 
-import os, sys, pandas as pd
+import os, sys
+import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 

@@ -40,7 +40,7 @@ class DataTransformation:
                  ('scaler',StandardScaler())]
             )
             
-            logging.info("Numerical cols encoding completed")
+            
             
             cat_pipeline = Pipeline(
                 [

@@ -2,11 +2,12 @@ from setuptools import find_packages,setup # find_packages will automatically fi
 from typing import List
 
 
-hyphen_e = "-e ."
+
 def get_requirements(file:str)->List[str]:
     """
     This function will return the list of requirements
     """ 
+    hyphen_e = "-e ."
     requirements = []
     with open(file,'r') as file_obj:
         requirements = file_obj.readlines()
