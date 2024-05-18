@@ -16,7 +16,7 @@ def error_msg_detail(error,error_detail:sys):
     _,_,exc_tb = error_detail.exc_info()
     file_name = exc_tb.tb_frame.f_code.co_filename
     line_number = exc_tb.tb_lineno
-    error_msg = f"Error occured in python script name {file_name} at line number {line_number} & the error message is {str(error)}"
+    error_msg = f"Error occured in python script name {file_name} at line number {line_number} & the error message is [{str(error)}]"
     return error_msg
 
 class CustomerException(Exception):
