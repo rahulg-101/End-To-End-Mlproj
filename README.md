@@ -30,8 +30,8 @@ python app.py
 Deployment
 The Flask app is deployed on the following platforms:
 
-AWS EC2
-Azure
+- AWS EC2
+- Azure
 
 ### Contributing
 Contributions to this project are welcome. If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
